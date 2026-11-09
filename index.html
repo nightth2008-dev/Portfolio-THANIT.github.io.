@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO - นาย ฐนิต ชิตร | คณะรัฐศาสตร์ มหาวิทยาลัยธรรมศาสตร์</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Sarabun & Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tuRed: {
+                            DEFAULT: '#C8102E',
+                            dark: '#9B111E',
+                            deep: '#800020'
+                        },
+                        tuGold: {
+                            DEFAULT: '#FFC72C',
+                            light: '#FFE082',
+                            dark: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        sarabun: ['Sarabun', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fdfbf7;
+            color: #2d3748;
+        }
+        h1, h2, h3, h4, h5, h6, .font-prompt {
+            font-family: 'Prompt', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(200, 16, 46, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .text-gradient-red-gold {
+            background: linear-gradient(135deg, #C8102E 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-tu-gradient {
+            background: linear-gradient(135deg, #9B111E 0%, #C8102E 50%, #D4AF37 100%);
+        }
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+        }
+        .badge-polygon {
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C8102E;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9B111E;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-tuGold selection:text-tuRed-deep">
+
+    <!-- Header / Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b-2 border-tuGold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-tuRed text-tuGold flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-prompt font-bold">TU</i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold font-prompt text-tuRed leading-none">THANIT CHIT</span>
+                        <span class="text-xs text-gray-500 font-medium">PORTFOLIO | รัฐศาสตร์ มธ.</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu Links -->
+                <nav class="hidden md:flex items-center space-x-6 font-prompt text-sm font-medium text-gray-700">
+                    <a href="#home" class="hover:text-tuRed transition-colors py-1 border-b-2 border-transparent hover:border-tuRed">หน้าแรก</a>
+                    <a href="#profile" class="hover:text-tuRed transition-colors py-1 border-b-2 border-transparent hover:border-tuRed">ประวัติส่วนตัว</a>
+                    <a href="#achievements" class="hover:text-tuRed transition-colors py-1 border-b-2 border-transparent hover:border-tuRed">ผลงานโดดเด่น</a>
+                    <a href="#activities" class="hover:text-tuRed transition-colors py-1 border-b-2 border-transparent hover:border-tuRed">กิจกรรม</a>
+                    <a href="#certificates" class="hover:text-tuRed transition-colors py-1 border-b-2 border-transparent hover:border-tuRed">เกียรติบัตร</a>
+                    <a href="#contact" class="px-4 py-2 bg-tuRed text-tuGold font-semibold rounded-lg shadow hover:bg-tuRed-dark transition-all transform hover:-translate-y-0.5">ติดต่อ</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-tuRed focus:outline-none p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-3 font-prompt">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-tuRed border-b border-gray-100">หน้าแรก</a>
+            <a href="#profile" class="block py-2 text-gray-700 hover:text-tuRed border-b border-gray-100">ประวัติส่วนตัว</a>
+            <a href="#achievements" class="block py-2 text-gray-700 hover:text-tuRed border-b border-gray-100">ผลงานโดดเด่น</a>
+            <a href="#activities" class="block py-2 text-gray-700 hover:text-tuRed border-b border-gray-100">กิจกรรม</a>
+            <a href="#certificates" class="block py-2 text-gray-700 hover:text-tuRed border-b border-gray-100">เกียรติบัตร</a>
+            <a href="#contact" class="block py-2 text-center bg-tuRed text-tuGold font-semibold rounded-lg">ติดต่อ</a>
+        </div>
+    </header>
+
+    <!-- Hero / Cover Banner Section -->
+    <section id="home" class="relative bg-grid-pattern overflow-hidden pt-8 pb-16 lg:py-20 border-b border-tuGold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Hero Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tuGold/20 border border-tuGold text-tuRed-deep text-xs sm:text-sm font-semibold font-prompt">
+                        <i class="fa-solid fa-graduation-cap text-tuRed"></i>
+                        <span>โครงการช้างเผือก | มหาวิทยาลัยธรรมศาสตร์</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-prompt tracking-tight text-gray-900 leading-tight">
+                        PORTFOLIO <br>
+                        <span class="text-gradient-red-gold">คณะรัฐศาสตร์</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-medium text-tuRed-dark font-prompt">
+                        สาขาวิชาการเมืองการปกครอง
+                    </p>
+
+                    <blockquote class="p-4 bg-white/80 border-l-4 border-tuRed rounded-r-lg shadow-sm text-gray-700 italic font-sarabun">
+                        "จากความหลงใหล สู่ความตั้งใจในสายใยรัฐศาสตร์"
+                    </blockquote>
+
+                    <!-- Name Banner Card -->
+                    <div class="p-5 rounded-2xl bg-tu-gradient text-white shadow-xl relative overflow-hidden group">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-tuGold/20 rounded-full blur-2xl group-hover:scale-125 transition-transform"></div>
+                        <h2 class="text-2xl sm:text-3xl font-bold font-prompt text-tuGold">นาย ฐนิต ชิตร</h2>
+                        <p class="text-sm sm:text-base text-gray-100 mt-1">โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+                        <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"><i class="fa-solid fa-award text-tuGold mr-1"></i> จิตอาสา 904</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"><i class="fa-solid fa-users text-tuGold mr-1"></i> ประธานสภาเด็กฯ 2 สมัย</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"><i class="fa-solid fa-user-shield text-tuGold mr-1"></i> หัวหน้า นศท.</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#profile" class="px-6 py-3 bg-tuRed hover:bg-tuRed-dark text-tuGold font-prompt font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <span>สำรวจประวัติส่วนตัว</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#achievements" class="px-6 py-3 bg-white hover:bg-gray-50 text-tuRed font-prompt font-semibold rounded-xl border border-tuRed/30 shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-star text-tuGold"></i>
+                            <span>ชมผลงานโดดเด่น</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Showcase -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Red/Yellow Graphic Frame Backing -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-tuRed via-tuGold to-tuRed-dark rounded-3xl blur opacity-75 animate-pulse"></div>
+                        <div class="relative bg-white p-3 rounded-2xl shadow-2xl border-2 border-tuGold">
+                            <!-- Image Frame with SVG Fallback Placeholder -->
+                            <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4]">
+                                <img id="hero-img" 
+                                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
+                                     alt="นาย ฐนิต ชิตร" 
+                                     class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x800/C8102E/FFC72C?text=Thanit+Chit+Photo';">
+                                
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white">
+                                    <p class="font-prompt font-semibold text-lg text-tuGold">นาย ฐนิต ชิตร (ไนท์)</p>
+                                    <p class="text-xs text-gray-200">ผู้สมัคร คณะรัฐศาสตร์ มหาลัยวิทยาลัยธรรมศาสตร์</p>
+                                </div>
+                            </div>
+                            <!-- Small Note Badge -->
+                            <div class="mt-3 flex items-center justify-between text-xs text-gray-500 font-prompt px-1">
+                                <span><i class="fa-solid fa-camera text-tuRed mr-1"></i> ภาพถ่ายรูปโปรไฟล์</span>
+                                <button onclick="openImageModal('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800', 'นาย ฐนิต ชิตร')" class="text-tuRed hover:underline font-medium">ดูภาพขยาย <i class="fa-solid fa-expand ml-0.5"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Personal Profile & Education (ประวัติส่วนตัว & การศึกษา) -->
+    <section id="profile" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 bg-tuRed/10 text-tuRed font-prompt text-xs font-semibold rounded-full uppercase tracking-wider">PERSONAL INFORMATION</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-prompt text-gray-900 mt-2">
+                    ประวัติส่วนตัว <span class="text-tuRed">&amp;</span> ประวัติการศึกษา
+                </h2>
+                <div class="w-20 h-1 bg-tuGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Left: Personal Data Card -->
+                <div class="lg:col-span-6 bg-gradient-to-br from-amber-50/50 to-red-50/30 rounded-2xl p-6 sm:p-8 border border-tuGold/40 shadow-sm relative">
+                    <div class="flex items-center gap-3 mb-6 border-b border-tuGold/30 pb-4">
+                        <div class="w-10 h-10 rounded-lg bg-tuRed text-tuGold flex items-center justify-center text-xl shadow">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-prompt text-tuRed-deep">ข้อมูลส่วนบุคคล (Profile)</h3>
+                    </div>
+
+                    <div class="space-y-4 text-gray-700">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-sm">
+                                <span class="text-xs text-gray-400 font-prompt block">ชื่อ-นามสกุล</span>
+                                <span class="font-semibold text-gray-900">นาย ฐนิต ชิตร</span>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-sm">
+                                <span class="text-xs text-gray-400 font-prompt block">ชื่อเล่น / อายุ</span>
+                                <span class="font-semibold text-gray-900">ไนท์ (18 ปี)</span>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-sm">
+                                <span class="text-xs text-gray-400 font-prompt block">สัญชาติ / เชื้อชาติ</span>
+                                <span class="font-semibold text-gray-900">ไทย / ไทย</span>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-sm">
+                                <span class="text-xs text-gray-400 font-prompt block">งานอดิเรก</span>
+                                <span class="font-semibold text-gray-900">อ่านหนังสือ / กิจกรรมจิตอาสา</span>
+                            </div>
+                        </div>
+
+                        <!-- Special Abilities Box -->
+                        <div class="bg-tuRed text-white p-4 rounded-xl shadow-md mt-4">
+                            <h4 class="font-prompt font-semibold text-tuGold text-sm mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-star"></i> ความสามารถพิเศษ (Special Skills)
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-lg font-medium"><i class="fa-solid fa-check text-tuGold mr-1"></i> กล้าแสดงออก / ภาวะผู้นำสูง</span>
+                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-lg font-medium"><i class="fa-solid fa-check text-tuGold mr-1"></i> การพูดในที่สาธารณะ / วิทยากร</span>
+                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-lg font-medium"><i class="fa-solid fa-check text-tuGold mr-1"></i> การประสานงาน &amp; การบริหารสภาเยาวชน</span>
+                            </div>
+                        </div>
+
+                        <!-- Address Info -->
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                            <span class="text-xs text-gray-400 font-prompt block mb-1">ที่อยู่ปัจจุบัน</span>
+                            <p class="text-sm text-gray-800 leading-relaxed">
+                                <i class="fa-solid fa-location-dot text-tuRed mr-1.5"></i>
+                                85/1 หมู่ที่ 4 ตำบลถ้ำพรรณรา อำเภอถ้ำพรรณรา จังหวัดนครศรีธรรมราช
+                            </p>
+                        </div>
+
+                        <!-- Family Info -->
+                        <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                            <span class="text-xs text-gray-400 font-prompt block mb-2">ประวัติครอบครัว (Family Background)</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                                <div class="border-l-2 border-tuGold pl-3">
+                                    <p class="font-semibold text-gray-900">บิดา: นาย ชัยยันต์ ชิตร</p>
+                                    <p class="text-xs text-gray-500">อายุ 58 ปี (อาชีพ: ทำสวน)</p>
+                                </div>
+                                <div class="border-l-2 border-tuGold pl-3">
+                                    <p class="font-semibold text-gray-900">มารดา: นางสาว วิสาข์ ลอย</p>
+                                    <p class="text-xs text-gray-500">อายุ 43 ปี (อาชีพ: ทำสวน)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Educational Timeline Card -->
+                <div class="lg:col-span-6 bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
+                            <div class="w-10 h-10 rounded-lg bg-tuGold text-tuRed-deep flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold font-prompt text-gray-900">ประวัติการศึกษา (Education)</h3>
+                        </div>
+
+                        <!-- Timeline List -->
+                        <div class="relative pl-6 space-y-8 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-tuRed before:via-tuGold before:to-tuRed-dark">
+                            
+                            <!-- Edu Item 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-6 top-1.5 w-5 h-5 rounded-full bg-tuRed border-4 border-white shadow group-hover:scale-125 transition-transform"></div>
+                                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-tuRed shadow-sm hover:shadow-md transition-shadow">
+                                    <span class="inline-block px-2.5 py-0.5 bg-tuRed/10 text-tuRed text-xs font-semibold rounded font-prompt">ประถมศึกษาปีที่ 1 - 6</span>
+                                    <h4 class="text-lg font-bold font-prompt text-gray-900 mt-1">โรงเรียนบ้านวังตลับ</h4>
+                                    <p class="text-xs text-gray-500 mt-1">สำนักงานเขตพื้นที่การศึกษาประถมศึกษานครศรีธรรมราช</p>
+                                </div>
+                            </div>
+
+                            <!-- Edu Item 2 -->
+                            <div class="relative group">
+                                <div class="absolute -left-6 top-1.5 w-5 h-5 rounded-full bg-tuGold border-4 border-white shadow group-hover:scale-125 transition-transform"></div>
+                                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-tuGold shadow-sm hover:shadow-md transition-shadow">
+                                    <span class="inline-block px-2.5 py-0.5 bg-tuGold/20 text-tuRed-dark text-xs font-semibold rounded font-prompt">มัธยมศึกษาปีที่ 1 - 3</span>
+                                    <h4 class="text-lg font-bold font-prompt text-gray-900 mt-1">โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</h4>
+                                    <p class="text-xs text-gray-500 mt-1">สำนักงานเขตพื้นที่การศึกษามัธยมศึกษานครศรีธรรมราช</p>
+                                </div>
+                            </div>
+
+                            <!-- Edu Item 3 -->
+                            <div class="relative group">
+                                <div class="absolute -left-6 top-1.5 w-5 h-5 rounded-full bg-tuRed-dark border-4 border-white shadow group-hover:scale-125 transition-transform"></div>
+                                <div class="bg-amber-50/40 p-4 rounded-xl border-l-4 border-tuRed-dark shadow-sm hover:shadow-md transition-shadow">
+                                    <span class="inline-block px-2.5 py-0.5 bg-tuRed text-tuGold text-xs font-semibold rounded font-prompt">มัธยมศึกษาปีที่ 4 - 6</span>
+                                    <h4 class="text-lg font-bold font-prompt text-gray-900 mt-1">โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</h4>
+                                    <p class="text-xs text-gray-600 mt-1 font-medium text-tuRed">สายการเรียนวิชาการเตรียมความพร้อมมุ่งสู่อุดมศึกษา</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Target Goals Banner -->
+                    <div class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between bg-tuRed/5 p-4 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-bullseye text-2xl text-tuRed"></i>
+                            <div>
+                                <p class="text-xs text-gray-500 font-prompt">เป้าหมายการศึกษา</p>
+                                <p class="font-bold font-prompt text-tuRed-deep text-sm">คณะรัฐศาสตร์ สาขาการเมืองการปกครอง มธ.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 bg-tuGold text-tuRed-deep rounded-full">โครงการช้างเผือก</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Featured Achievements (ผลงานที่โดดเด่น) -->
+    <section id="achievements" class="py-16 bg-gray-50 border-y border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 bg-tuGold/30 text-tuRed-deep font-prompt text-xs font-semibold rounded-full uppercase tracking-wider">FEATURED HIGHLIGHTS</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-prompt text-gray-900 mt-2">
+                    ผลงานที่โดดเด่น <span class="text-tuRed">(Key Leadership &amp; Roles)</span>
+                </h2>
+                <p class="text-gray-600 text-sm mt-2">ผลงานและบทบาทภาวะผู้นำ การปฏิบัติหน้าที่เพื่อส่วนรวม และการพัฒนาสังคม</p>
+                <div class="w-20 h-1 bg-tuRed mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Achievements Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: จิตอาสา 904 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=600" 
+                             alt="หลักสูตรจิตอาสา904" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/9B111E/FFC72C?text=Jit-Arsa+904';">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-tuRed text-tuGold text-xs font-bold rounded-full font-prompt shadow">
+                            เกียรติประวัติสูงสุด
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                หลักสูตรจิตอาสา 904 รุ่นที่ 5/68
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">หลักสูตรพื้นฐาน (ภาค 4)</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                ได้รับคัดเลือกเข้าร่วมการฝึกอบรมเข้มข้น ผ่านกระบวนการทดสอบและวิทยากรจิตอาสา ทำหน้าที่ช่วยเหลือประชาชน ถ่ายทอดความรู้ และบำเพ็ญประโยชน์ต่อสังคมอย่างต่อเนื่อง
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-building-columns text-tuRed mr-1"></i> หน่วยราชการในพระองค์</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=600', 'หลักสูตรจิตอาสา 904 รุ่นที่ 5/68')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: ประธานสภาเด็กและเยาวชน -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" 
+                             alt="ประธานสภาเด็กและเยาวชน" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFC72C/800020?text=Youth+Council+President';">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-tuGold text-tuRed-deep text-xs font-bold rounded-full font-prompt shadow">
+                            ดำรงตำแหน่ง 2 สมัย
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                ประธานสภาเด็กและเยาวชน
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">เทศบาลตำบลถ้ำพรรณรา (พ.ศ. 2567-2568)</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                ขับเคลื่อนโครงการพัฒนาศักยภาพเด็กและเยาวชน เป็นกระบอกเสียงเสนอแนวคิดเพื่อการพัฒนาชุมชน นำเสนอโครงการ "รากแห่งชีวิต" และกิจกรรมสาธารณประโยชน์ในพื้นที่
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-users-viewfinder text-tuRed mr-1"></i> เทศบาลตำบลถ้ำพรรณรา</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600', 'ประธานสภาเด็กและเยาวชนเทศบาลตำบลถ้ำพรรณรา')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: รองประธานนักเรียน -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" 
+                             alt="รองประธานนักเรียน" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/9B111E/ffffff?text=Student+Vice+President';">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                รองประธานนักเรียน
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">รร.ทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                ร่วมบริหารงานสภานักเรียน จัดกิจกรรมเชื่อมความสัมพันธ์ระหว่างครูและนักเรียน นำเสนอนโยบายสร้างสรรค์เพื่อสวัสดิการและความเป็นระเบียบเรียบร้อยในโรงเรียน
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-sitemap text-tuRed mr-1"></i> สภานักเรียน</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600', 'รองประธานนักเรียน โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ฯ')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: หัวหน้านักศึกษาวิชาทหาร -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600" 
+                             alt="หัวหน้านักศึกษาวิชาทหาร" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/333333/FFC72C?text=ROTC+Leader';">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                หัวหน้านักศึกษาวิชาทหาร (นศท.)
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">บังคับบัญชาหมวด นศท. โรงเรียน</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                กำกับดูแลระเบียบวินัย เป็นผู้นำในการฝึกแถว และประสานงานกับศูนย์ฝึกนักศึกษาวิชาทหาร มณฑลทหารบกที่ 41 อย่างมีประสิทธิภาพ
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-shield-halved text-tuRed mr-1"></i> มทบ.41</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600', 'หัวหน้านักศึกษาวิชาทหาร')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: ประธานชมรม TO BE NUMBER ONE -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" 
+                             alt="ประธานชมรม TO BE NUMBER ONE" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/C8102E/ffffff?text=TO+BE+NUMBER+ONE';">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                ประธานชมรม TO BE NUMBER ONE
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">ศูนย์เพื่อนใจ TO BE NUMBER ONE</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                รณรงค์ป้องกันและแก้ไขปัญหายาเสพติด จัดกิจกรรมส่งเสริมทักษะชีวิตแก่เพื่อนนักเรียน และนำเสนอผลงานระดับจังหวัด
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-heart-pulse text-tuRed mr-1"></i> โครงการ TO BE NUMBER ONE</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600', 'ประธานชมรม TO BE NUMBER ONE')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: วิทยากรบรรยายเยาวชน -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600" 
+                             alt="วิทยากรบรรยายเยาวชน" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/F4C430/800020?text=Youth+Speaker';">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-prompt text-gray-900 group-hover:text-tuRed transition-colors">
+                                วิทยากรจิตอาสา &amp; ผู้บรรยาย
+                            </h3>
+                            <p class="text-xs text-tuRed font-semibold font-prompt mt-1">งานวันพ่อแห่งชาติ &amp; วันเด็กแห่งชาติ</p>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                รับหน้าที่วิทยากรบรรยายหัวข้อ "หน้าที่ของจิตอาสา" และพิธีกรดำเนินรายการในงานสำคัญของอำเภอและจังหวัด
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                            <span><i class="fa-solid fa-microphone text-tuRed mr-1"></i> งานกิจกรรมอำเภอ</span>
+                            <button onclick="openImageModal('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600', 'วิทยากรจิตอาสา')" class="text-tuRed font-semibold hover:underline">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Activities Section (กิจกรรมที่เข้าร่วม) -->
+    <section id="activities" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="px-3 py-1 bg-tuRed/10 text-tuRed font-prompt text-xs font-semibold rounded-full uppercase tracking-wider">ACTIVITIES GALLERY</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-prompt text-gray-900 mt-2">
+                        กิจกรรมที่เข้าร่วม <span class="text-tuRed">(Extracurricular)</span>
+                    </h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2 font-prompt text-sm" id="activity-filters">
+                    <button class="filter-btn active px-4 py-1.5 rounded-full bg-tuRed text-white font-medium transition-all" data-filter="all">ทั้งหมด</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-tuGold/30 transition-all" data-filter="vol">จิตอาสา/สังคม</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-tuGold/30 transition-all" data-filter="school">กิจกรรมโรงเรียน</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-tuGold/30 transition-all" data-filter="skill">อบรม/ทักษะ</button>
+                </div>
+            </div>
+
+            <!-- Activities Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="activity-grid">
+                
+                <!-- Activity Item 1 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="vol">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=600" alt="โครงการ Roots of Life" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/C8102E/FFFFFF?text=Roots+of+Life';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">10-11 เม.ย. 2568</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">โครงการ Roots of Life "รากแห่งชีวิต"</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">บ้านแหลมโฮมสเตย์ อ.ท่าศาลา</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">จัดกิจกรรมอนุรักษ์ธรรมชาติและฟื้นฟูระบบนิเวศในนามประธานสภาเด็กและเยาวชนเทศบาลตำบลถ้ำพรรณรา</p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 2 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="school">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=600" alt="วันต่อต้านยาเสพติดโลก" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9B111E/FFFFFF?text=Anti-Drug+Day';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">26 มิ.ย. 2569</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">กิจกรรมวันต่อต้านยาเสพติดโลก</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">รร.ทุ่งใหญ่เฉลิมราชอนุสรณ์ฯ</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">ตัวแกนนำนักเรียนกล่าวนำเจตนารมณ์ต่อต้านยาเสพติด เนื่องในวันต่อต้านยาเสพติดโลก</p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 3 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="vol">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=600" alt="กิจกรรมวันพ่อแห่งชาติ 2568" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFC72C/800020?text=Fathers+Day';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">4 ธ.ค. 2568</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">วิทยากรจิตอาสา "วันพ่อแห่งชาติ 2568"</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">หอประชุมเฉลิมพระเกียรติ ร.9</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">วิทยากรจิตอาสาบรรยายหัวข้อ "หน้าที่ของจิตอาสา" ในพิธีมอบสิ่งของพระราชทาน</p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 4 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="skill">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" alt="อบรม CPR และการปฐมพยาบาล" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/C8102E/FFC72C?text=CPR+Training';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">19 พ.ย. 2568</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">การฝึกการช่วยเหลือ CPR เบื้องต้น</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">ชมรม นศท. รร.ทุ่งใหญ่เฉลิมราชอนุสรณ์ฯ</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">รับการอบรมทักษะการปฐมพยาบาลเบื้องต้นและการช่วยชีวิตปั๊มหัวใจ CPR อย่างถูกวิธี</p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 5 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="school">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="ค่ายพัฒนาศักยภาพสภานักเรียน" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9B111E/FFC72C?text=Student+Council+Camp';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">16-17 พ.ย. 2568</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">ค่ายพัฒนาศักยภาพสภานักเรียน</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">หอประชุมเฉลิมพระเกียรติ ร.9</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">เข้าร่วมการเข้าค่ายอบรมภาวะผู้นำ การวางแผนงานสภา และสร้างความสามัคคีในองค์กร</p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 6 -->
+                <div class="activity-card bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all" data-category="vol">
+                    <div class="h-44 bg-gray-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=600" alt="งานวันเด็กแห่งชาติ 2569" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/D4AF37/9B111E?text=Childrens+Day';">
+                        <span class="absolute top-2 right-2 px-2.5 py-0.5 bg-black/60 text-white text-xs rounded font-prompt">10 ม.ค. 2569</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold font-prompt text-gray-900 text-base">จัดกิจกรรมงาน "วันเด็กแห่งชาติ 2569"</h4>
+                        <p class="text-xs text-tuRed font-semibold mt-0.5">วัดถ้ำทองพรรณรา</p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">ร่วมจัดกิจกรรมนันทนาการและแจกของขวัญให้แก่เด็กและเยาวชนในเขตเทศบาลตำบลถ้ำพรรณรา</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 5: Certificates Section (เกียรติบัตรที่ได้รับ) -->
+    <section id="certificates" class="py-16 bg-gradient-to-b from-amber-50/40 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 bg-tuGold text-tuRed-deep font-prompt text-xs font-semibold rounded-full uppercase tracking-wider">CERTIFICATES &amp; AWARDS</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-prompt text-gray-900 mt-2">
+                    เกียรติบัตร <span class="text-tuRed">และ รางวัลที่ได้รับ</span>
+                </h2>
+                <p class="text-gray-600 text-sm mt-2">คลิกที่เกียรติบัตรเพื่อเปิดดูรูปขยายและรายละเอียดเต็ม</p>
+                <div class="w-20 h-1 bg-tuGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Cert 1 -->
+                <div onclick="openImageModal('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800', 'เกียรติบัตร รด.ไซเบอร์')" 
+                     class="bg-white p-3 rounded-xl border border-tuGold/40 shadow hover:shadow-xl transition-all cursor-pointer group">
+                    <div class="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600" alt="เกียรติบัตร รด.ไซเบอร์" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/600x450/FFF/C8102E?text=Certificate+Cyber+ROTC';">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-bold font-prompt text-sm text-gray-900 mt-3 group-hover:text-tuRed transition-colors">ผู้มีความสามารถด้านเทคโนโลยี</h4>
+                    <p class="text-xs text-gray-500 mt-1">รด.ไซเบอร์ ศูนย์ฝึกนักศึกษาวิชาทหาร มทบ.41</p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div onclick="openImageModal('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800', 'เหรียญทอง พูดสุนทรพจน์ส่งเสริมสภานักเรียน')" 
+                     class="bg-white p-3 rounded-xl border border-tuGold/40 shadow hover:shadow-xl transition-all cursor-pointer group">
+                    <div class="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=600" alt="เหรียญทอง พูดสุนทรพจน์" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/600x450/FFF/FFC72C?text=Gold+Speech+Award';">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-bold font-prompt text-sm text-gray-900 mt-3 group-hover:text-tuRed transition-colors">รางวัลเหรียญทอง พูดสุนทรพจน์</h4>
+                    <p class="text-xs text-gray-500 mt-1">ส่งเสริมสภานักเรียน ระดับ ม.1-ม.6 สพม.นครศรีธรรมราช</p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div onclick="openImageModal('https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=800', 'แต่งตั้งตำแหน่ง หัวหน้าหมวด นศท.')" 
+                     class="bg-white p-3 rounded-xl border border-tuGold/40 shadow hover:shadow-xl transition-all cursor-pointer group">
+                    <div class="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=600" alt="เกียรติบัตร แต่งตั้งหัวหน้าหมวด" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/600x450/FFF/9B111E?text=ROTC+Leader+Cert';">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-bold font-prompt text-sm text-gray-900 mt-3 group-hover:text-tuRed transition-colors">แต่งตั้งตำแหน่ง นศท.ผู้บังคับบัญชา</h4>
+                    <p class="text-xs text-gray-500 mt-1">ตำแหน่ง หัวหน้าหมวด ศูนย์ฝึก นศท. มทบ.41</p>
+                </div>
+
+                <!-- Cert 4 -->
+                <div onclick="openImageModal('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800', 'ใบประกาศนียบัตร จิตอาสา 904')" 
+                     class="bg-white p-3 rounded-xl border border-tuGold/40 shadow hover:shadow-xl transition-all cursor-pointer group">
+                    <div class="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="ใบประกาศ จิตอาสา 904" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/600x450/FFF/800020?text=Jit-Arsa+904+Cert';">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-bold font-prompt text-sm text-gray-900 mt-3 group-hover:text-tuRed transition-colors">สำเร็จหลักสูตร จิตอาสา 904</h4>
+                    <p class="text-xs text-gray-500 mt-1">หลักสูตรพื้นฐาน ภาค 4 รุ่นที่ 5/68 หน่วยราชการในพระองค์</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 6: Contact Section (ช่องทางการติดต่อ) -->
+    <section id="contact" class="py-16 bg-tu-gradient text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="px-3 py-1 bg-tuGold text-tuRed-deep font-prompt text-xs font-bold rounded-full uppercase tracking-wider">GET IN TOUCH</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-prompt text-tuGold">
+                        ช่องทางการติดต่อ
+                    </h2>
+                    <p class="text-gray-200 text-sm leading-relaxed">
+                        ยินดีให้ข้อมูลเพิ่มเติมเกี่ยวกับประวัติ ผลงาน หรือสอบถามรายละเอียดกิจกรรมเพิ่มเติมครับ
+                    </p>
+
+                    <!-- Contact Details Buttons -->
+                    <div class="space-y-3 font-prompt">
+                        <a href="https://facebook.com" target="_blank" class="flex items-center gap-4 p-3.5 bg-white/10 hover:bg-white/20 rounded-xl backdrop-blur-sm border border-white/20 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xl shadow">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-300 block">Facebook</span>
+                                <span class="font-semibold text-white">Thanit Chit</span>
+                            </div>
+                        </a>
+
+                        <a href="https://instagram.com" target="_blank" class="flex items-center gap-4 p-3.5 bg-white/10 hover:bg-white/20 rounded-xl backdrop-blur-sm border border-white/20 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 text-white flex items-center justify-center text-xl shadow">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-300 block">Instagram</span>
+                                <span class="font-semibold text-white">thanit_ex</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:0654071586" class="flex items-center gap-4 p-3.5 bg-white/10 hover:bg-white/20 rounded-xl backdrop-blur-sm border border-white/20 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-green-500 text-white flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-300 block">เบอร์โทรศัพท์</span>
+                                <span class="font-semibold text-white">065 - 407 - 1586</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:nightth2008@gmail.com" class="flex items-center gap-4 p-3.5 bg-white/10 hover:bg-white/20 rounded-xl backdrop-blur-sm border border-white/20 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-red-500 text-white flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-300 block">อีเมล (E-Mail)</span>
+                                <span class="font-semibold text-white">nightth2008@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 text-gray-800 shadow-2xl border-2 border-tuGold">
+                        <h3 class="text-2xl font-bold font-prompt text-tuRed-deep mb-4">ส่งข้อความติดต่อ (Send Message)</h3>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-prompt font-semibold text-gray-700 mb-1">ชื่อผู้ติดต่อ / หน่วยงาน</label>
+                                <input type="text" required placeholder="กรอกชื่อของคุณ" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tuRed focus:border-tuRed outline-none transition-all">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-prompt font-semibold text-gray-700 mb-1">อีเมลตอบกลับ</label>
+                                    <input type="email" required placeholder="your@email.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tuRed focus:border-tuRed outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-prompt font-semibold text-gray-700 mb-1">เบอร์โทรศัพท์ติดต่อกลับ</label>
+                                    <input type="tel" placeholder="08X-XXX-XXXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tuRed focus:border-tuRed outline-none transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-prompt font-semibold text-gray-700 mb-1">ข้อความเรื่องที่ต้องการติดต่อ</label>
+                                <textarea rows="4" required placeholder="พิมพ์ข้อความรายละเอียดที่นี่..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tuRed focus:border-tuRed outline-none transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-tuRed hover:bg-tuRed-dark text-tuGold font-prompt font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>ส่งข้อความ</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 font-prompt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-2">
+            <p class="text-gray-300 font-semibold">PORTFOLIO - นาย ฐนิต ชิตร | คณะรัฐศาสตร์ มหาวิทยาลัยธรรมศาสตร์</p>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก อำเภอถ้ำพรรณรา จังหวัดนครศรีธรรมราช</p>
+            <p class="text-gray-500 pt-2">© 2026 Thanit Chit. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Image Modal Lightbox -->
+    <div id="image-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-fade-in">
+            <button onclick="closeImageModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-tuRed flex items-center justify-center transition-colors z-10">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="max-h-[75vh] bg-black flex items-center justify-center overflow-hidden">
+                <img id="modal-img" src="" alt="Modal Detail" class="max-h-[75vh] w-auto object-contain">
+            </div>
+            <div class="p-4 bg-white border-t border-gray-100 flex items-center justify-between">
+                <h4 id="modal-caption" class="font-bold font-prompt text-gray-900 text-base"></h4>
+                <button onclick="closeImageModal()" class="px-4 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-prompt text-xs rounded-lg font-semibold">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Modal (Replaces alert()) -->
+    <div id="toast-modal" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-white border-l-4 border-tuRed p-4 rounded-xl shadow-2xl transition-all">
+        <div class="flex items-start gap-3">
+            <div class="text-tuRed text-xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <h5 class="font-bold font-prompt text-gray-900 text-sm">บันทึกข้อความเรียบร้อย</h5>
+                <p id="toast-message" class="text-xs text-gray-600 mt-0.5">ขอบคุณสำหรับข้อความติดต่อ เราจะตอบกลับโดยเร็วที่สุด</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivity Logic -->
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer on navigation click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Activity Filtering Logic
+        const filterBtns = document.querySelectorAll('#activity-filters .filter-btn');
+        const activityCards = document.querySelectorAll('#activity-grid .activity-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state on buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-tuRed', 'text-white', 'active');
+                    b.classList.add('bg-gray-100', 'text-gray-700');
+                });
+                btn.classList.remove('bg-gray-100', 'text-gray-700');
+                btn.classList.add('bg-tuRed', 'text-white', 'active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                activityCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Image Lightbox Modal Functions
+        function openImageModal(imgSrc, captionText) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+
+            modalImg.src = imgSrc;
+            modalCaption.innerText = captionText;
+            modal.classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+
+        // Close modal on outer click or Escape key
+        document.getElementById('image-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'image-modal') {
+                closeImageModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        // Form Submission with Toast Notification (No alert())
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const toast = document.getElementById('toast-modal');
+            toast.classList.remove('hidden');
+
+            // Reset form
+            document.getElementById('contact-form').reset();
+
+            // Hide Toast after 4 seconds
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
